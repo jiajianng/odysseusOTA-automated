@@ -72,10 +72,10 @@ echo "Please enter your OpenSSH password below. Unless you changed it with passw
 scp pwnediBSS root@IPofDevice:
 echo "Now, we are going to put the device into kDFU, a mode just for restoring the firmware which is iOS 6.1.3 . This is kinda like the hospital procedure where they put the patient into a deep state of unawareness (aka fainted) before surgery. We will need your SSH password once again below. (vvvv)"
 ssh root@IPofDevice ./kloader pwnediBSS; exit || abort
-printf "Are you sure you want to downgrade your iPhone 4S to iOS 6.1.3? (yes/no)"
-read confirmDowngrade
-if $confirmDowngrade = "yes", echo "Downgrading now"
-if $confirmDowngrade = "no", echo "To exit the black screen simply reboot by holding Home button + Power button." && abort
+#printf "Are you sure you want to downgrade your iPhone 4S to iOS 6.1.3? (yes/no)"
+#read confirmDowngrade
+#if $confirmDowngrade = "yes", echo "Downgrading now"
+#if $confirmDowngrade = "no", echo "To exit the black screen simply reboot by holding Home button + Power button." && abort
 ./idevicerestore -w ./custom_downgrade.ipsw || abort
 echo "You have successfully downgraded your iPhone 4S to iOS 6.1.3! Enjoy!"
 echo "----------------"
